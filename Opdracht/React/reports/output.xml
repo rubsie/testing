@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.6 on win32)" generated="20210317 21:16:27.575" rpa="false">
+<suite id="s1" name="Menucardstories" source="C:\Users\ruben\OneDrive - Thomas More\Testing\Robot-Framework-Training\Exercises\Opdracht\React\tests\menucardstories.robot">
+<kw name="Open Website" library="basePage" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:28.427" level="INFO">Opening browser 'Google Chrome' to base url 'https://verapeeters-thomasmore.github.io/menus/#/'.</msg>
+<status status="PASS" starttime="20210317 21:16:28.426" endtime="20210317 21:16:31.321"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:28.425" endtime="20210317 21:16:31.321"></status>
+</kw>
+<test id="s1-t1" name="Verify Menu Link">
+<kw name="Go To Menu Page" library="homePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${MENULINK}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:31.325" level="INFO">Clicking element 'css:#root &gt; #top &gt; div &gt; div:nth-child(2) &gt; a'.</msg>
+<status status="PASS" starttime="20210317 21:16:31.324" endtime="20210317 21:16:31.418"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20210317 21:16:32.420" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210317 21:16:31.418" endtime="20210317 21:16:32.420"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:31.324" endtime="20210317 21:16:32.420"></status>
+</kw>
+<kw name="Get First Header of Menu" library="homePage">
+<assign>
+<var>${text}</var>
+</assign>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${MENUHEADER}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210317 21:16:32.459" level="INFO">${text} = Onze Bierkaart</msg>
+<status status="PASS" starttime="20210317 21:16:32.421" endtime="20210317 21:16:32.459"></status>
+</kw>
+<msg timestamp="20210317 21:16:32.459" level="INFO">${text} = Onze Bierkaart</msg>
+<status status="PASS" starttime="20210317 21:16:32.421" endtime="20210317 21:16:32.460"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>Onze Bierkaart</arg>
+</arguments>
+<status status="PASS" starttime="20210317 21:16:32.460" endtime="20210317 21:16:32.461"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:31.321" endtime="20210317 21:16:32.461" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Order first beer in menu">
+<kw name="Go To Menu Page" library="homePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${MENULINK}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:32.467" level="INFO">Clicking element 'css:#root &gt; #top &gt; div &gt; div:nth-child(2) &gt; a'.</msg>
+<status status="PASS" starttime="20210317 21:16:32.467" endtime="20210317 21:16:32.518"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20210317 21:16:33.520" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210317 21:16:32.518" endtime="20210317 21:16:33.520"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:32.466" endtime="20210317 21:16:33.520"></status>
+</kw>
+<kw name="Click first beer" library="homePage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${FIRSTBEER}</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<msg timestamp="20210317 21:16:33.551" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="9b7ffe1f-065a-4d2d-b817-5cca033dc985")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:33.522" endtime="20210317 21:16:33.551"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:33.551" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="9b7ffe1f-065a-4d2d-b817-5cca033dc985")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:33.551" endtime="20210317 21:16:33.551"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:33.552" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="9b7ffe1f-065a-4d2d-b817-5cca033dc985")&gt;'.</msg>
+<status status="PASS" starttime="20210317 21:16:33.552" endtime="20210317 21:16:33.681"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:33.521" endtime="20210317 21:16:33.681"></status>
+</kw>
+<kw name="Click on shopping cart" library="homePage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${ADDSHOPPINGCART}</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<msg timestamp="20210317 21:16:33.701" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="29dd1931-b95c-4c79-a2b0-942cbdc02215")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:33.682" endtime="20210317 21:16:33.701"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:33.702" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="29dd1931-b95c-4c79-a2b0-942cbdc02215")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:33.702" endtime="20210317 21:16:33.702"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:33.703" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="29dd1931-b95c-4c79-a2b0-942cbdc02215")&gt;'.</msg>
+<status status="PASS" starttime="20210317 21:16:33.703" endtime="20210317 21:16:33.778"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:33.681" endtime="20210317 21:16:33.779"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${ERRORMESSAGE}</arg>
+<arg>Scan QR code op je tafel om te bestellen.</arg>
+<arg>2s</arg>
+</arguments>
+<status status="PASS" starttime="20210317 21:16:33.780" endtime="20210317 21:16:33.827"></status>
+</kw>
+<kw name="Close menu modal" library="homePage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${CLOSEMODAL}</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<msg timestamp="20210317 21:16:33.848" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="526117a3-d9c5-4372-89fa-0b62bb246d66")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:33.829" endtime="20210317 21:16:33.848"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:33.850" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="526117a3-d9c5-4372-89fa-0b62bb246d66")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:33.849" endtime="20210317 21:16:33.850"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:33.851" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="526117a3-d9c5-4372-89fa-0b62bb246d66")&gt;'.</msg>
+<status status="PASS" starttime="20210317 21:16:33.851" endtime="20210317 21:16:33.934"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:33.828" endtime="20210317 21:16:33.934"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:32.464" endtime="20210317 21:16:33.935" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Order a beer">
+<kw name="Scan table" library="basePage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:33.939" level="INFO">Opening url 'https://verapeeters-thomasmore.github.io/menus/#/table/99'</msg>
+<status status="PASS" starttime="20210317 21:16:33.938" endtime="20210317 21:16:34.011"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:33.937" endtime="20210317 21:16:34.011"></status>
+</kw>
+<kw name="Go To Menu Page" library="homePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${MENULINK}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:34.015" level="INFO">Clicking element 'css:#root &gt; #top &gt; div &gt; div:nth-child(2) &gt; a'.</msg>
+<status status="PASS" starttime="20210317 21:16:34.014" endtime="20210317 21:16:34.127"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.129" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210317 21:16:34.128" endtime="20210317 21:16:35.129"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:34.013" endtime="20210317 21:16:35.129"></status>
+</kw>
+<kw name="Click first beer" library="homePage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${FIRSTBEER}</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<msg timestamp="20210317 21:16:35.145" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="74e39613-3364-4fea-a62f-b13105ed98b5")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.130" endtime="20210317 21:16:35.145"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.146" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="74e39613-3364-4fea-a62f-b13105ed98b5")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.146" endtime="20210317 21:16:35.146"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.146" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="74e39613-3364-4fea-a62f-b13105ed98b5")&gt;'.</msg>
+<status status="PASS" starttime="20210317 21:16:35.146" endtime="20210317 21:16:35.213"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:35.130" endtime="20210317 21:16:35.213"></status>
+</kw>
+<kw name="Click on shopping cart" library="homePage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${ADDSHOPPINGCART}</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<msg timestamp="20210317 21:16:35.226" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="046459fb-9a42-4235-9512-420a47871ee9")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.215" endtime="20210317 21:16:35.226"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.227" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="046459fb-9a42-4235-9512-420a47871ee9")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.226" endtime="20210317 21:16:35.227"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.228" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="046459fb-9a42-4235-9512-420a47871ee9")&gt;'.</msg>
+<status status="PASS" starttime="20210317 21:16:35.227" endtime="20210317 21:16:35.296"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:35.214" endtime="20210317 21:16:35.297"></status>
+</kw>
+<kw name="Close menu modal" library="homePage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${CLOSEMODAL}</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<msg timestamp="20210317 21:16:35.316" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="526117a3-d9c5-4372-89fa-0b62bb246d66")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.300" endtime="20210317 21:16:35.316"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.317" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="526117a3-d9c5-4372-89fa-0b62bb246d66")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.316" endtime="20210317 21:16:35.317"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.318" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="526117a3-d9c5-4372-89fa-0b62bb246d66")&gt;'.</msg>
+<status status="PASS" starttime="20210317 21:16:35.317" endtime="20210317 21:16:35.389"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:35.298" endtime="20210317 21:16:35.390"></status>
+</kw>
+<kw name="Open shopping basket" library="homePage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${SHOPPINGBASKET}</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<msg timestamp="20210317 21:16:35.413" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="1fedb221-9ea7-4e18-800c-d2e0c209e9d2")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.393" endtime="20210317 21:16:35.413"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.414" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="1fedb221-9ea7-4e18-800c-d2e0c209e9d2")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.413" endtime="20210317 21:16:35.414"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.415" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="1fedb221-9ea7-4e18-800c-d2e0c209e9d2")&gt;'.</msg>
+<status status="PASS" starttime="20210317 21:16:35.414" endtime="20210317 21:16:35.505"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:35.392" endtime="20210317 21:16:35.505"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Je bestelling</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.545" level="INFO">Current page contains text 'Je bestelling'.</msg>
+<status status="PASS" starttime="20210317 21:16:35.506" endtime="20210317 21:16:35.546"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:33.936" endtime="20210317 21:16:35.547" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Place order">
+<kw name="Open shopping basket" library="homePage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${SHOPPINGBASKET}</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<msg timestamp="20210317 21:16:35.564" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="1fedb221-9ea7-4e18-800c-d2e0c209e9d2")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.551" endtime="20210317 21:16:35.564"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.565" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="1fedb221-9ea7-4e18-800c-d2e0c209e9d2")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.564" endtime="20210317 21:16:35.565"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.566" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="1fedb221-9ea7-4e18-800c-d2e0c209e9d2")&gt;'.</msg>
+<status status="PASS" starttime="20210317 21:16:35.565" endtime="20210317 21:16:35.604"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:35.551" endtime="20210317 21:16:35.604"></status>
+</kw>
+<kw name="Place order" library="homePage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${ORDERBUTTON}</arg>
+</arguments>
+<assign>
+<var>${el}</var>
+</assign>
+<msg timestamp="20210317 21:16:35.628" level="INFO">${el} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="42a3f5ed-2628-4c44-bec2-caa1f945d777")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.606" endtime="20210317 21:16:35.629"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.630" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="42a3f5ed-2628-4c44-bec2-caa1f945d777")&gt;</msg>
+<status status="PASS" starttime="20210317 21:16:35.629" endtime="20210317 21:16:35.630"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${el}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:35.631" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5e55fb19dda52b353b2766a07ca7a614", element="42a3f5ed-2628-4c44-bec2-caa1f945d777")&gt;'.</msg>
+<status status="PASS" starttime="20210317 21:16:35.630" endtime="20210317 21:16:35.693"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:35.605" endtime="20210317 21:16:35.694"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${ERRORMESSAGE}</arg>
+<arg>Je bestelling is doorgestuurd.</arg>
+<arg>2s</arg>
+</arguments>
+<status status="PASS" starttime="20210317 21:16:35.694" endtime="20210317 21:16:35.938"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:35.549" endtime="20210317 21:16:35.938" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Check favorites">
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20210317 21:16:35.941" endtime="20210317 21:16:36.155"></status>
+</kw>
+<kw name="Open favorites" library="homePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${FAVORITES}</arg>
+</arguments>
+<msg timestamp="20210317 21:16:36.157" level="INFO">Clicking element 'css=a:nth-child(1) path'.</msg>
+<status status="PASS" starttime="20210317 21:16:36.156" endtime="20210317 21:16:36.285"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:36.155" endtime="20210317 21:16:36.285"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Je hebt nog geen favorieten</arg>
+</arguments>
+<msg timestamp="20210317 21:16:36.307" level="INFO">Current page contains text 'Je hebt nog geen favorieten'.</msg>
+<status status="PASS" starttime="20210317 21:16:36.286" endtime="20210317 21:16:36.307"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:35.941" endtime="20210317 21:16:36.308" critical="yes"></status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210317 21:16:36.311" endtime="20210317 21:16:38.894"></status>
+</kw>
+<status status="PASS" starttime="20210317 21:16:27.577" endtime="20210317 21:16:38.894"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0">Critical Tests</stat>
+<stat pass="5" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" id="s1" name="Menucardstories">Menucardstories</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
